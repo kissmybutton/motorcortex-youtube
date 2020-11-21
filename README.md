@@ -26,6 +26,8 @@ you need to implement, you can start directly from their abstract implementation
 Change the names of the files, name your Classes however you want but always make sure you import and
 expose everything on your main.js file.
 
+Also, it's imortant to change your package.json file so you can name your pluign, provide details and more.
+
 ## Commands
 * `npm run build`: builds the dist of your pluign along with the demo
 * `npm run build:demo`: builds just the demo
