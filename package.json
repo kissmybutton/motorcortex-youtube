@@ -63,7 +63,7 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.1.0",
     "exports-loader": "0.7.0",
-    "imports-loader": "0.8.0",
+    "imports-loader": "1.2.0",
     "npx": "10.2.2",
     "prettier": "2.2.0",
     "rimraf": "3.0.2",
