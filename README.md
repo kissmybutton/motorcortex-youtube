@@ -5,7 +5,7 @@ A starter plugin for creating MotorCortex plugins.
 ## Structure and Contents
 It includes:
 * rollup configuration & ready to use build tools
-* a pre-configured webpack for the needs of demo
+* a pre-configured webpack for the needs of the demo
 * pre-configured eslint and babel
 * and a set of ready to work on, Incidents:
     * **Effect**, for developing a custom Effect
@@ -22,9 +22,10 @@ for detailed information on how to implement a plugin.
 
 ## How to use
 Once you've decided what exactly your pluign is going to do and once we've decided on the type of Incident(s)
-you need to implement, you can start directly from their abstract implementation and work on it directly.
+you need to implement, you can start directly from the basic/blank implementations and either work on them directly
+or just copy them.
 Change the names of the files, name your Classes however you want but always make sure you import and
-expose everything on your main.js file.
+expose everything properly on your main.js file.
 
 Also, it's imortant to change your package.json file so you can name your pluign, provide details and more.
 
