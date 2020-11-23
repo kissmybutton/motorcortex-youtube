@@ -1,8 +1,5 @@
 name: MC test
-on: 
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
