@@ -1,4 +1,4 @@
-name: MC test
+name: Build package
 on: [push, pull_request]
 jobs:
   build:
@@ -7,7 +7,7 @@ jobs:
       matrix:
         node: [10, 12, 14]
         os: [ubuntu-latest, windows-latest, macos-latest]
-    name: Building MC on ${{ matrix.os }} and node ${{ matrix.node }}
+    name: Building on ${{ matrix.os }} and node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
       - name: Setup node
