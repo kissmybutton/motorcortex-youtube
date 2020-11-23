@@ -38,7 +38,7 @@ export default class MyEffect extends MotorCortex.Effect{
     * for its element.  
     **/
     getScratchValue(){
-
+        return 0;
     }
     
     /**

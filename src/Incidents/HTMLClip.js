@@ -13,8 +13,6 @@ import MotorCortex from '@kissmybutton/motorcortex';
  */
 export default class MyHTMLClip extends MotorCortex.HTMLClip{
     get html(){
-        // You can use JSX here
-
         return <div></div>
     }
 

@@ -36,9 +36,7 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@kissmybutton/motorcortex": "6.0.7"
   },
