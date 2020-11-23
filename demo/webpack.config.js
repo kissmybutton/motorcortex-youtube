@@ -70,8 +70,11 @@ module.exports = {
     hot: true,
     contentBase: "./demo",
   },
-  node: {
-    fs: "empty",
+  resolve: {
+    fallback: {
+        fs: false,
+        path: false
+    },
   },
 
   optimization: {
