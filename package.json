@@ -23,7 +23,7 @@
     "build": "npm run build:lib && npm run build:demo",
     "build:lib": "rollup -c",
     "start": "npm run build:lib && concurrently -c \"cyan.bold,magenta.bold\" \"npm:build:lib -- -w\"  \"npm:start:demo\" ",
-    "start:demo": "webpack-dev-server --mode=development --config ./demo/webpack.config.js",
+    "start:demo": "webpack serve --mode=development --config ./demo/webpack.config.js",
     "build:demo": "webpack --mode=production --config ./demo/webpack.config.js",
     "test": "HERE GOES YOUR TEST TASK",
     "test:prod": "npm run lint"
@@ -81,7 +81,6 @@
     "stylelint-scss": "3.18.0",
     "webpack": "5.6.0",
     "webpack-cli": "4.2.0",
-    "webpack-dev-server": "3.11.0",
     "whatwg-fetch": "3.5.0"
   }
 }
