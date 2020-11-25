@@ -5,31 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Kyssmybutton | MotorCortex Plugin Starter Demo</title>
-    <style type="text/css">
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        background-color: #282828;
-      }
-      section {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-      }
-      #clip {
-        background-color: #f7f7f7;
-        width: 90%;
-        height: 90%;
-        margin: auto;
-        margin-top: 2%;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <section><div id="clip"></div></section>
+
+    <div id="motorcortex-tools">
+        <div id="motorcortex-logo">
+            <img src="./motorcortex.png" width="20px" height="20px" />
+        </div>
+        <div id="menu">
+            <div class="item">
+                <a href="https://library.motorcortexjs.com" target="_blank">Plugins</a>
+            </div>
+            <div class="item">
+                <a href="https://docs.motorcortexjs.com" target="_blank">Docs</a>
+            </div>
+        </div>
+    </div> 
+
+    <script src="./motorcortex-tools.js"></script>
     <script src="./bundle.js"></script>
   </body>
 </html>
