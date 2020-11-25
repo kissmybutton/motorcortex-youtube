@@ -69,6 +69,7 @@ module.exports = {
     historyApiFallback: false,
     hot: true,
     contentBase: "./demo",
+    open: true
   },
   resolve: {
     fallback: {
