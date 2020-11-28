@@ -65,7 +65,7 @@
     "exports-loader": "1.1.1",
     "imports-loader": "1.2.0",
     "npx": "10.2.2",
-    "prettier": "2.2.0",
+    "prettier": "2.2.1",
     "rimraf": "3.0.2",
     "rollup": "2.33.3",
     "@rollup/plugin-babel": "5.2.1",
