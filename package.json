@@ -44,7 +44,7 @@
     "@babel/cli": "7.12.10",
     "@babel/core": "7.12.10",
     "@babel/plugin-syntax-jsx": "7.12.1",
-    "@babel/plugin-transform-react-jsx": "7.12.11",
+    "@babel/plugin-transform-react-jsx": "7.12.12",
     "@babel/preset-env": "7.12.11",
     "@kissmybutton/motorcortex": "6.1.0",
     "@kissmybutton/motorcortex-player": "1.5.13",
