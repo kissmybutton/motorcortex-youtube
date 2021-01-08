@@ -23,6 +23,7 @@ import MotorCortex from '@kissmybutton/motorcortex';
  * - this.element: provides a reference to the specific element of the MonoIncident
  * - this.attributeKey: the key of the animatedAttr of the MonoIncident
  * - this.targetValue: the final value of the animatedAttr
+ * - this.initialValue: the initial value of the animatedAttr
  * and the following methods:
  * - onGetContext
  * - getScratchValue
