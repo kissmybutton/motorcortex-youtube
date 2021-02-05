@@ -3,12 +3,15 @@ import MyCombo from './Incidents/Combo';
 import MyHTMLClip from './Incidents/HTMLClip';
 import MyClip from './Incidents/Clip';
 
+const pkg = require('../package.json');
+
 export default {
   npm_name: "my-plugin-name", // !! make sure the name of your plugin is identical to the name of your package.json !!
   incidents: [
     {
       exportable: MyEffect,
-      name: "MyEffect",
+      name: pkg.name, // don't touch this
+      version: pkg.version, // don't touch this
     //   attributesValidationRules: {
     //     // define your attributeValidationRules so MotorCortex can automatically validate them on instantiation 
     //     // also so your Incidents are directly embedable to DonkeyClip
