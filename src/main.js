@@ -11,8 +11,7 @@ export default {
   incidents: [
     {
       exportable: MyEffect,
-      name: pkg.name, // don't touch this
-      version: pkg.version, // don't touch this
+      name: "MyEffect", // name your Incident any way you want
     //   attributesValidationRules: {
     //     // define your attributeValidationRules so MotorCortex can automatically validate them on instantiation 
     //     // also so your Incidents are directly embedable to DonkeyClip
