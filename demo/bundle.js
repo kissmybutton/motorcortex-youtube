@@ -82,85 +82,85 @@ var player = new (_kissmybutton_motorcortex_player__WEBPACK_IMPORTED_MODULE_2___
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-!function (t, e) {
-  "object" == ( false ? 0 : _typeof(exports)) && "undefined" != "object" ? module.exports = e(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+!function (e, t) {
+  "object" == ( false ? 0 : _typeof(exports)) && "undefined" != "object" ? module.exports = t(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
 		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
-}(this, function (t) {
+}(this, function (e) {
   "use strict";
 
-  function e(t) {
-    return t && "object" == _typeof(t) && "default" in t ? t : {
-      default: t
+  function t(e) {
+    return e && "object" == _typeof(e) && "default" in e ? e : {
+      default: e
     };
   }
 
-  var n = e(t);
+  var n = t(e);
 
-  function r(t, e) {
-    if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+  function r(e, t) {
+    if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
   }
 
-  function o(t, e) {
-    for (var n = 0; n < e.length; n++) {
-      var r = e[n];
-      r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(t, r.key, r);
+  function o(e, t) {
+    for (var n = 0; n < t.length; n++) {
+      var r = t[n];
+      r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
     }
   }
 
-  function u(t, e, n) {
-    return e && o(t.prototype, e), n && o(t, n), t;
+  function u(e, t, n) {
+    return t && o(e.prototype, t), n && o(e, n), e;
   }
 
-  function i(t, e) {
-    if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
-    t.prototype = Object.create(e && e.prototype, {
+  function i(e, t) {
+    if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
+    e.prototype = Object.create(t && t.prototype, {
       constructor: {
-        value: t,
+        value: e,
         writable: !0,
         configurable: !0
       }
-    }), e && c(t, e);
+    }), t && c(e, t);
   }
 
-  function f(t) {
-    return (f = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
-      return t.__proto__ || Object.getPrototypeOf(t);
-    })(t);
+  function f(e) {
+    return (f = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
+      return e.__proto__ || Object.getPrototypeOf(e);
+    })(e);
   }
 
-  function c(t, e) {
-    return (c = Object.setPrototypeOf || function (t, e) {
-      return t.__proto__ = e, t;
-    })(t, e);
+  function c(e, t) {
+    return (c = Object.setPrototypeOf || function (e, t) {
+      return e.__proto__ = t, e;
+    })(e, t);
   }
 
-  function a(t, e) {
-    return !e || "object" != _typeof(e) && "function" != typeof e ? function (t) {
-      if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-      return t;
-    }(t) : e;
+  function a(e, t) {
+    return !t || "object" != _typeof(t) && "function" != typeof t ? function (e) {
+      if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      return e;
+    }(e) : t;
   }
 
-  function l(t) {
-    var e = function () {
+  function l(e) {
+    var t = function () {
       if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" == typeof Proxy) return !0;
 
       try {
         return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
-      } catch (t) {
+      } catch (e) {
         return !1;
       }
     }();
 
     return function () {
       var n,
-          r = f(t);
+          r = f(e);
 
-      if (e) {
+      if (t) {
         var o = f(this).constructor;
         n = Reflect.construct(r, arguments, o);
       } else n = r.apply(this, arguments);
@@ -169,12 +169,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
   }
 
-  var s = function (t) {
-    i(n, t);
-    var e = l(n);
+  var s = function (e) {
+    i(n, e);
+    var t = l(n);
 
     function n() {
-      return r(this, n), e.apply(this, arguments);
+      return r(this, n), t.apply(this, arguments);
     }
 
     return u(n, [{
@@ -187,15 +187,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       value: function value() {}
     }, {
       key: "onProgress",
-      value: function value(t, e) {}
+      value: function value(e, t) {}
     }]), n;
   }(n.default.Effect),
-      p = function (t) {
-    i(n, t);
-    var e = l(n);
+      p = function (e) {
+    i(n, e);
+    var t = l(n);
 
     function n() {
-      return r(this, n), e.apply(this, arguments);
+      return r(this, n), t.apply(this, arguments);
     }
 
     return u(n, [{
@@ -205,12 +205,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     }]), n;
   }(n.default.Combo),
-      y = function (t) {
-    i(o, t);
-    var e = l(o);
+      y = function (e) {
+    i(o, e);
+    var t = l(o);
 
     function o() {
-      return r(this, o), e.apply(this, arguments);
+      return r(this, o), t.apply(this, arguments);
     }
 
     return u(o, [{
@@ -238,12 +238,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       value: function value() {}
     }]), o;
   }(n.default.HTMLClip),
-      d = function (t) {
-    i(n, t);
-    var e = l(n);
+      d = function (e) {
+    i(n, e);
+    var t = l(n);
 
     function n() {
-      return r(this, n), e.apply(this, arguments);
+      return r(this, n), t.apply(this, arguments);
     }
 
     return u(n, [{
@@ -254,7 +254,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       b = __webpack_require__(500);
 
   return {
-    npm_name: "my-plugin-name",
+    npm_name: b.name,
+    version: b.version,
     incidents: [{
       exportable: s,
       name: b.name,
@@ -378,7 +379,7 @@ module.exports = JSON.parse("{\"name\":\"my-plugin-name\",\"version\":\"0.0.1\",
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("a9405189a2c3f64ca6c2")
+/******/ 		__webpack_require__.h = () => ("813f4e81c69c49d55c43")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

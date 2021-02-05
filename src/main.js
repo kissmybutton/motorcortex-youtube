@@ -6,7 +6,8 @@ import MyClip from './Incidents/Clip';
 const pkg = require('../package.json');
 
 export default {
-  npm_name: "my-plugin-name", // !! make sure the name of your plugin is identical to the name of your package.json !!
+  npm_name: pkg.name, // don't touch this
+  version: pkg.version, // don't touch this
   incidents: [
     {
       exportable: MyEffect,
