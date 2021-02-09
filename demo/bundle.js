@@ -82,85 +82,85 @@ var player = new (_kissmybutton_motorcortex_player__WEBPACK_IMPORTED_MODULE_2___
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-!function (e, t) {
-  "object" == ( false ? 0 : _typeof(exports)) && "undefined" != "object" ? module.exports = t(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+!function (t, e) {
+  "object" == ( false ? 0 : _typeof(exports)) && "undefined" != "object" ? module.exports = e(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
 		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
-}(this, function (e) {
+}(this, function (t) {
   "use strict";
 
-  function t(e) {
-    return e && "object" == _typeof(e) && "default" in e ? e : {
-      default: e
+  function e(t) {
+    return t && "object" == _typeof(t) && "default" in t ? t : {
+      default: t
     };
   }
 
-  var n = t(e);
+  var n = e(t);
 
-  function r(e, t) {
-    if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
+  function r(t, e) {
+    if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
   }
 
-  function o(e, t) {
-    for (var n = 0; n < t.length; n++) {
-      var r = t[n];
-      r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
+  function o(t, e) {
+    for (var n = 0; n < e.length; n++) {
+      var r = e[n];
+      r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(t, r.key, r);
     }
   }
 
-  function u(e, t, n) {
-    return t && o(e.prototype, t), n && o(e, n), e;
+  function u(t, e, n) {
+    return e && o(t.prototype, e), n && o(t, n), t;
   }
 
-  function i(e, t) {
-    if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
-    e.prototype = Object.create(t && t.prototype, {
+  function i(t, e) {
+    if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+    t.prototype = Object.create(e && e.prototype, {
       constructor: {
-        value: e,
+        value: t,
         writable: !0,
         configurable: !0
       }
-    }), t && c(e, t);
+    }), e && c(t, e);
   }
 
-  function f(e) {
-    return (f = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
-      return e.__proto__ || Object.getPrototypeOf(e);
-    })(e);
+  function f(t) {
+    return (f = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
+      return t.__proto__ || Object.getPrototypeOf(t);
+    })(t);
   }
 
-  function c(e, t) {
-    return (c = Object.setPrototypeOf || function (e, t) {
-      return e.__proto__ = t, e;
-    })(e, t);
+  function c(t, e) {
+    return (c = Object.setPrototypeOf || function (t, e) {
+      return t.__proto__ = e, t;
+    })(t, e);
   }
 
-  function a(e, t) {
-    return !t || "object" != _typeof(t) && "function" != typeof t ? function (e) {
-      if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-      return e;
-    }(e) : t;
+  function a(t, e) {
+    return !e || "object" != _typeof(e) && "function" != typeof e ? function (t) {
+      if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      return t;
+    }(t) : e;
   }
 
-  function l(e) {
-    var t = function () {
+  function l(t) {
+    var e = function () {
       if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" == typeof Proxy) return !0;
 
       try {
         return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
-      } catch (e) {
+      } catch (t) {
         return !1;
       }
     }();
 
     return function () {
       var n,
-          r = f(e);
+          r = f(t);
 
-      if (t) {
+      if (e) {
         var o = f(this).constructor;
         n = Reflect.construct(r, arguments, o);
       } else n = r.apply(this, arguments);
@@ -169,102 +169,83 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
   }
 
-  var s = function (e) {
-    i(n, e);
-    var t = l(n);
-
-    function n() {
-      return r(this, n), t.apply(this, arguments);
-    }
-
-    return u(n, [{
-      key: "getScratchValue",
-      value: function value() {
-        return 0;
-      }
-    }, {
-      key: "onGetContext",
-      value: function value() {}
-    }, {
-      key: "onProgress",
-      value: function value(e, t) {}
-    }]), n;
-  }(n.default.Effect),
-      p = function (e) {
-    i(n, e);
-    var t = l(n);
-
-    function n() {
-      return r(this, n), t.apply(this, arguments);
-    }
-
-    return u(n, [{
-      key: "incidents",
-      get: function get() {
-        return [];
-      }
-    }]), n;
-  }(n.default.Combo),
-      y = function (e) {
-    i(o, e);
-    var t = l(o);
-
-    function o() {
-      return r(this, o), t.apply(this, arguments);
-    }
-
-    return u(o, [{
-      key: "html",
-      get: function get() {
-        return n.default.utils.createDOMElement("div", null);
-      }
-    }, {
-      key: "css",
-      get: function get() {
-        return "\n            \n        ";
-      }
-    }, {
-      key: "fonts",
-      get: function get() {
-        return [];
-      }
-    }, {
-      key: "audioSources",
-      get: function get() {
-        return [];
-      }
-    }, {
-      key: "buildTree",
-      value: function value() {}
-    }]), o;
-  }(n.default.HTMLClip),
-      d = function (e) {
-    i(n, e);
-    var t = l(n);
-
-    function n() {
-      return r(this, n), t.apply(this, arguments);
-    }
-
-    return u(n, [{
-      key: "onAfterRender",
-      value: function value() {}
-    }]), n;
-  }(n.default.BrowserClip),
-      b = __webpack_require__(500);
-
   return {
-    npm_name: b.name,
-    version: b.version,
+    npm_name: "my-plugin-name",
+    version: "0.0.1",
     incidents: [{
-      exportable: s,
-      name: b.name,
-      version: b.version
+      exportable: function (t) {
+        i(n, t);
+        var e = l(n);
+
+        function n() {
+          return r(this, n), e.apply(this, arguments);
+        }
+
+        return u(n, [{
+          key: "getScratchValue",
+          value: function value() {
+            return 0;
+          }
+        }, {
+          key: "onGetContext",
+          value: function value() {}
+        }, {
+          key: "onProgress",
+          value: function value(t, e) {}
+        }]), n;
+      }(n.default.Effect),
+      name: "MyEffect"
     }, {
-      exportable: p,
+      exportable: function (t) {
+        i(n, t);
+        var e = l(n);
+
+        function n() {
+          return r(this, n), e.apply(this, arguments);
+        }
+
+        return u(n, [{
+          key: "incidents",
+          get: function get() {
+            return [];
+          }
+        }]), n;
+      }(n.default.Combo),
       name: "MyCombo"
     }, {
-      exportable: y,
+      exportable: function (t) {
+        i(o, t);
+        var e = l(o);
+
+        function o() {
+          return r(this, o), e.apply(this, arguments);
+        }
+
+        return u(o, [{
+          key: "html",
+          get: function get() {
+            return n.default.utils.createDOMElement("div", null);
+          }
+        }, {
+          key: "css",
+          get: function get() {
+            return "\n            \n        ";
+          }
+        }, {
+          key: "fonts",
+          get: function get() {
+            return [];
+          }
+        }, {
+          key: "audioSources",
+          get: function get() {
+            return [];
+          }
+        }, {
+          key: "buildTree",
+          value: function value() {}
+        }]), o;
+      }(n.default.HTMLClip),
       name: "MyHTMLClip",
       originalDims: {
         width: "600px",
@@ -272,18 +253,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     }],
     Clip: {
-      exportable: d
+      exportable: function (t) {
+        i(n, t);
+        var e = l(n);
+
+        function n() {
+          return r(this, n), e.apply(this, arguments);
+        }
+
+        return u(n, [{
+          key: "onAfterRender",
+          value: function value() {}
+        }]), n;
+      }(n.default.BrowserClip)
     }
   };
 });
-
-/***/ }),
-
-/***/ 500:
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse("{\"name\":\"my-plugin-name\",\"version\":\"0.0.1\",\"description\":\"Your plugin description here\",\"main\":\"dist/bundle.cjs.js\",\"module\":\"dist/bundle.esm.js\",\"browser\":\"dist/bundle.umd.js\",\"author\":\"\",\"repository\":{\"type\":\"git\",\"url\":\"Your git repo here\"},\"license\":\"MIT\",\"engines\":{\"node\":\">=10\"},\"scripts\":{\"concurrently\":\"concurrently -c \\\"cyan.bold,magenta.bold\\\" --names \\\"JS,Styles\\\"\",\"lint:styles\":\"stylelint  --allow-empty-input \\\"src/**.css\\\" \\\"src/**/*.scss\\\" --config .stylelintrc.json\",\"lint:js\":\"eslint -c .eslintrc src/**/*.js\",\"lint\":\"npm run concurrently \\\"npm:lint:js\\\" \\\"npm:lint:styles\\\"\",\"lint:fix\":\"npm run concurrently  \\\"npm:lint:js -- --fix\\\" \\\"npm:lint:styles -- --fix\\\"\",\"build\":\"npm run build:lib && npm run build:demo\",\"build:lib\":\"rollup -c\",\"start\":\"npm run build:lib && concurrently -c \\\"cyan.bold,magenta.bold\\\" \\\"npm:build:lib -- -w\\\"  \\\"npm:start:demo\\\" \",\"start:demo\":\"webpack serve --mode=development --config ./demo/webpack.config.js\",\"build:demo\":\"webpack --mode=production --config ./demo/webpack.config.js\",\"test\":\"HERE GOES YOUR TEST TASK\",\"test:prod\":\"npm run lint\"},\"keywords\":[\"motorcortex\"],\"config\":{\"commitizen\":{\"path\":\"cz-conventional-changelog\"}},\"dependencies\":{},\"peerDependencies\":{\"@kissmybutton/motorcortex\":\"6.1.4\"},\"devDependencies\":{\"@babel/cli\":\"7.12.13\",\"@babel/core\":\"7.12.13\",\"@babel/plugin-syntax-jsx\":\"7.12.13\",\"@babel/plugin-transform-react-jsx\":\"7.12.13\",\"@babel/preset-env\":\"7.12.13\",\"@kissmybutton/motorcortex\":\"6.1.4\",\"@kissmybutton/motorcortex-player\":\"1.7.0\",\"babel-eslint\":\"10.1.0\",\"babel-loader\":\"8.2.2\",\"concurrently\":\"5.3.0\",\"css-loader\":\"5.0.1\",\"es6-promise\":\"4.2.8\",\"eslint\":\"7.19.0\",\"eslint-config-prettier\":\"7.2.0\",\"eslint-config-standard\":\"16.0.2\",\"eslint-plugin-babel\":\"5.3.1\",\"eslint-plugin-import\":\"2.22.1\",\"eslint-plugin-node\":\"11.1.0\",\"eslint-plugin-prettier\":\"3.3.1\",\"eslint-plugin-promise\":\"4.2.1\",\"eslint-plugin-standard\":\"4.1.0\",\"exports-loader\":\"2.0.0\",\"imports-loader\":\"2.0.0\",\"npx\":\"10.2.2\",\"prettier\":\"2.2.1\",\"rimraf\":\"3.0.2\",\"rollup\":\"2.38.5\",\"@rollup/plugin-babel\":\"5.2.3\",\"@rollup/plugin-node-resolve\":\"11.1.1\",\"@rollup/plugin-commonjs\":\"17.1.0\",\"shelljs\":\"0.8.4\",\"stylelint\":\"13.9.0\",\"stylelint-config-prettier\":\"8.0.2\",\"stylelint-config-recommended\":\"3.0.0\",\"stylelint-config-recommended-scss\":\"4.2.0\",\"stylelint-config-sass-guidelines\":\"7.1.0\",\"stylelint-config-standard\":\"20.0.0\",\"stylelint-scss\":\"3.18.0\",\"webpack\":\"5.20.2\",\"webpack-cli\":\"4.5.0\",\"webpack-dev-server\":\"3.11.2\",\"whatwg-fetch\":\"3.5.0\"}}");
 
 /***/ }),
 
@@ -379,7 +364,7 @@ module.exports = JSON.parse("{\"name\":\"my-plugin-name\",\"version\":\"0.0.1\",
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("813f4e81c69c49d55c43")
+/******/ 		__webpack_require__.h = () => ("55e5bad77b228563a8c6")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

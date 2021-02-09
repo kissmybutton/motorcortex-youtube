@@ -3,11 +3,11 @@ import MyCombo from './Incidents/Combo';
 import MyHTMLClip from './Incidents/HTMLClip';
 import MyClip from './Incidents/Clip';
 
-const pkg = require('../package.json');
+import {name,version}  from '../package.json'
 
 export default {
-  npm_name: pkg.name, // don't touch this
-  version: pkg.version, // don't touch this
+  npm_name: name, // don't touch this
+  version: version, // don't touch this
   incidents: [
     {
       exportable: MyEffect,
