@@ -68,7 +68,7 @@
     "npx": "10.2.2",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
-    "rollup": "2.38.5",
+    "rollup": "2.39.0",
     "@rollup/plugin-babel": "5.2.3",
     "@rollup/plugin-node-resolve": "11.1.1",
     "@rollup/plugin-commonjs": "17.1.0",
