@@ -42,10 +42,10 @@
   },
   "devDependencies": {
     "@babel/cli": "7.13.0",
-    "@babel/core": "7.13.1",
+    "@babel/core": "7.13.8",
     "@babel/plugin-syntax-jsx": "7.12.13",
     "@babel/plugin-transform-react-jsx": "7.12.17",
-    "@babel/preset-env": "7.13.5",
+    "@babel/preset-env": "7.13.8",
     "@kissmybutton/motorcortex": "6.2.5",
     "@kissmybutton/motorcortex-player": "1.7.0",
     "@rollup/plugin-json": "4.1.0",
