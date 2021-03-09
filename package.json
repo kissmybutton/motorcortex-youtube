@@ -38,7 +38,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "@kissmybutton/motorcortex": "6.2.6"
+    "@kissmybutton/motorcortex": "6.2.7"
   },
   "devDependencies": {
     "@babel/cli": "7.13.10",
@@ -46,7 +46,7 @@
     "@babel/plugin-syntax-jsx": "7.12.13",
     "@babel/plugin-transform-react-jsx": "7.12.17",
     "@babel/preset-env": "7.13.10",
-    "@kissmybutton/motorcortex": "6.2.6",
+    "@kissmybutton/motorcortex": "6.2.7",
     "@kissmybutton/motorcortex-player": "1.7.0",
     "@rollup/plugin-json": "4.1.0",
     "babel-eslint": "10.1.0",
