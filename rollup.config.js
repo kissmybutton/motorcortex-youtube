@@ -39,7 +39,7 @@ export default [
       babel(),
       commonjs(),
       json(),
-      terser()
+      terser(),
     ]
   }
 ];

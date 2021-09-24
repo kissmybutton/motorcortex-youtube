@@ -1,8 +1,8 @@
-import MotorCortex from '@kissmybutton/motorcortex';
+import MotorCortex from '@donkeyclip/motorcortex';
 import MyPluginDefinition from "../dist/bundle.umd";
 const MyPlugin = MotorCortex.loadPlugin(MyPluginDefinition);
 
-import Player from "@kissmybutton/motorcortex-player";
+import Player from "@donkeyclip/motorcortex-player";
 
 
 const clip = new MotorCortex.HTMLClip({
