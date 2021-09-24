@@ -1,62 +1,44 @@
-import MotorCortex from '@donkeyclip/motorcortex';
-import MyPluginDefinition from "../dist/bundle.umd";
-const MyPlugin = MotorCortex.loadPlugin(MyPluginDefinition);
-
+import { HTMLClip, loadPlugin } from "@donkeyclip/motorcortex";
 import Player from "@donkeyclip/motorcortex-player";
+import VideoPluginDefinition from "../src/";
+const VideoPlugin = loadPlugin(VideoPluginDefinition);
 
-
-const clip = new MotorCortex.HTMLClip({
-    html: `<div class="container">
-        <div id="effect"></div>
-        <div id="htmlclip"></div>
-        <div id="combo"></div>
-        <div id="myclip"></div>
-    </div>`,
-    css: `
-        .container{
-            width: 600px,
-            height: 400px
-        }
-        .container>div{
-            width: 50%;
-            height: 50%;
-        }
-    `,
-    host: document.getElementById('clip'),
-    containerParams: {
-        width: '600px',
-        height: '400px'
+const MyClip = new HTMLClip({
+  host: document.getElementById("clip"),
+  id: "my-root-clip",
+  html: `<div id="video-container"></div>`,
+  css: `
+    #video-container{
+        width: 1280px;
+        height: 720px;
     }
+  `,
+  containerParams: {
+    width: "1280px",
+    height: "720px",
+  },
 });
 
-const newEffect = new MyPlugin.MyEffect({
-    animatedAttrs: {
-        attr: 'finalvalue'
-    }
-}, {
-    selector: '#effect',
-    duration: 1000
+const VideoClip = new VideoPlugin.Clip(
+  {
+    startFrom: 5000,
+    width: 1280,
+    height: 720,
+    videoId: "RUpDslHSLbU",
+  },
+  {
+    selector: "#video-container",
+    id: "videoClip",
+  }
+);
+
+const Playback = new VideoPlugin.Playback({
+  selector: "!#video",
+  duration: 10000,
 });
 
-const newCombo = new MyPlugin.MyCombo({
-    // here goes your attrs
-}, {
-    selector: '#combo'
-});
+MyClip.addIncident(VideoClip, 0);
+VideoClip.addIncident(Playback, 500);
 
-const newHTMLClip = new MyPlugin.MyHTMLClip({
-    // here goes your attrs
-}, {
-    selector: '#htmlclip'
-});
 
-const newCustomClip = new MyPlugin.Clip({
-    selector: '#myclip'
-});
-
-clip.addIncident(newEffect, 0);
-clip.addIncident(newCombo, 0);
-clip.addIncident(newHTMLClip, 0);
-clip.addIncident(newCustomClip, 0);
-
-const player = new Player({clip});
+new Player({ clip: MyClip });
