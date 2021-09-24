@@ -1,4 +1,4 @@
-import MotorCortex from '@kissmybutton/motorcortex';
+import MotorCortex from '@donkeyclip/motorcortex';
 
 /**
  * For details of the Combo concept and usage please refer to

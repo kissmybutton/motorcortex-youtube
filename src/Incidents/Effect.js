@@ -1,4 +1,4 @@
-import MotorCortex from '@kissmybutton/motorcortex';
+import MotorCortex from '@donkeyclip/motorcortex';
 
 /**
  * The purpose of Effects is to timely alter the state or value of attributes of

@@ -8,7 +8,7 @@ import pkg from "./package.json";
 export default [
   {
     input: "src/main.js",
-    external: ["@kissmybutton/motorcortex"],
+    external: ["@donkeyclip/motorcortex"],
     output: [
       { file: pkg.main, format: "cjs", name: "bundle" },
       { file: pkg.module, format: "es", name: "bundle" },
@@ -23,11 +23,11 @@ export default [
   },
   {
     input: "src/main.js",
-    external: ["@kissmybutton/motorcortex"],
+    external: ["@donkeyclip/motorcortex"],
     output: [
       {
         globals: {
-          "@kissmybutton/motorcortex": "MotorCortex",
+          "@donkeyclip/motorcortex": "MotorCortex",
         },
         name: "bundle",
         file: pkg.browser,

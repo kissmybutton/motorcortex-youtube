@@ -1,4 +1,4 @@
-import MotorCortex from '@kissmybutton/motorcortex';
+import MotorCortex from '@donkeyclip/motorcortex';
 
 /**
  * The purpose of extending the HTMLClip is to full, parametric 
