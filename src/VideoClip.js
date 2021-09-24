@@ -18,12 +18,21 @@ export default class VideoClip extends BrowserClip {
     `;
   }
 
+  subscribeVideoListener(funct){
+    if(!this.subscribers){
+      this.subscribers = [];
+    }
+    this.subscribers.push(funct);
+  }
+
   onAfterRender() {
+    const that = this;
     let player;
     const customEntity = {
       player,
       startFrom: this.startFrom,
       loaded: false,
+      subscribeVideoListener: (event) => that.subscribeVideoListener(event),
     };
     this.setCustomEntity("video", customEntity);
     const tag = this.context.document.createElement("script");
@@ -49,14 +58,22 @@ export default class VideoClip extends BrowserClip {
           ecver: 2,
           start: this.startFrom / 1000,
         },
-        // events: {
-        //   onReady: onPlayerReady,
-        //   onStateChange: onPlayerStateChange,
-        // },
+        events: {
+          onReady: () => {
+            customEntity.loaded = true;
+            customEntity.player = player;
+          },
+          onStateChange: function(event){
+            if(that.subscribers) {
+              for(let i=0; i<that.subscribers.length; i++) {
+                that.subscribers[i](event.data);
+              }
+            }
+          },
+        },
       });
-      customEntity.loaded = true;
-      customEntity.player = player;
-    }
+    };
+
     //
     // // 4. The API will call this function when the video player is ready.
     // function onPlayerReady(event) {
