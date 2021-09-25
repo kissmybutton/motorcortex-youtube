@@ -26,6 +26,7 @@ export default class VideoClip extends BrowserClip {
   }
 
   onAfterRender() {
+    this.contextLoading();
     const that = this;
     let player;
     const customEntity = {
@@ -62,6 +63,7 @@ export default class VideoClip extends BrowserClip {
           onReady: () => {
             customEntity.loaded = true;
             customEntity.player = player;
+            that.contextLoaded();
           },
           onStateChange: function(event){
             if(that.subscribers) {

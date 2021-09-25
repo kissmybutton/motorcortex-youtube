@@ -8,6 +8,9 @@ export default class VideoPlay extends MediaPlayback {
   play(/*millisecond*/) {
     const entity = this.element.entity;
     const currentState = entity.player.getPlayerState();
+    if(!entity.player) {
+      return this.waitingHandler();
+    }
     if(currentState === -1 || currentState === 3){
       return this.waitingHandler();
     }
@@ -17,7 +20,6 @@ export default class VideoPlay extends MediaPlayback {
   }
 
   stateChange(state){
-    console.log(state);
     switch (state) {
       case 3:
         this.waitingHandler();
@@ -28,7 +30,7 @@ export default class VideoPlay extends MediaPlayback {
   }
 
   waitingHandler() {
-    this.setBlock("Video loading");
+    this.setBlock("Video loading", { exceptional: true });
   }
 
   canplayHandler() {
