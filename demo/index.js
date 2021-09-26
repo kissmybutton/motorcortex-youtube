@@ -25,6 +25,7 @@ const VideoClip = new VideoPlugin.Clip(
     width: 1280,
     height: 720,
     videoId: "RUpDslHSLbU",
+    volume: 0.1,
   },
   {
     selector: "#video-container",
@@ -37,7 +38,7 @@ const Playback = new VideoPlugin.Playback({
   duration: 10000,
 });
 
-MyClip.addIncident(VideoClip, 0);
+MyClip.addIncident(VideoClip, 2000);
 VideoClip.addIncident(Playback, 500);
 
 

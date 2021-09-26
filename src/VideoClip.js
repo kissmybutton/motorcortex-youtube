@@ -25,6 +25,11 @@ export default class VideoClip extends BrowserClip {
     this.subscribers.push(funct);
   }
 
+  setVolume(vol){
+    // if(!this.customEntity.loaded) return;
+    this.entity.player.setVolume(vol * 100 * (this.attrs.volume || 1));
+  }
+
   onAfterRender() {
     this.contextLoading();
     const that = this;
@@ -35,6 +40,7 @@ export default class VideoClip extends BrowserClip {
       loaded: false,
       subscribeVideoListener: (event) => that.subscribeVideoListener(event),
     };
+    this.entity = customEntity;
     this.setCustomEntity("video", customEntity);
     const tag = this.context.document.createElement("script");
 
@@ -63,6 +69,11 @@ export default class VideoClip extends BrowserClip {
           onReady: () => {
             customEntity.loaded = true;
             customEntity.player = player;
+            const res = that.DescriptiveIncident.volumeChangeSubscribe(
+              that.id,
+              that.setVolume.bind(that)
+            );
+            that.setVolume(res);
             that.contextLoaded();
           },
           onStateChange: function(event){
@@ -75,25 +86,5 @@ export default class VideoClip extends BrowserClip {
         },
       });
     };
-
-    //
-    // // 4. The API will call this function when the video player is ready.
-    // function onPlayerReady(event) {
-    //   event.target.playVideo();
-    // }
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    // let done = false;
-    // function onPlayerStateChange(event) {
-    //   if (event.data == YT.PlayerState.PLAYING && !done) {
-    //     setTimeout(stopVideo, 6000);
-    //     done = true;
-    //   }
-    // }
-    // function stopVideo() {
-    //   player.stopVideo();
-    // }
   }
 }
