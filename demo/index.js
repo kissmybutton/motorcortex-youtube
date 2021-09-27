@@ -42,4 +42,4 @@ MyClip.addIncident(VideoClip, 500);
 VideoClip.addIncident(Playback, 500);
 
 
-new Player({ clip: MyClip });
+new Player({ clip: MyClip, showVolume: true });
