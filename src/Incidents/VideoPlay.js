@@ -5,16 +5,19 @@ export default class VideoPlay extends MediaPlayback {
     this.element.entity.subscribeVideoListener(this.stateChange.bind(this));
   }
 
-  play(/*millisecond*/) {
+  play(millisecond) {
     const entity = this.element.entity;
     const currentState = entity.player.getPlayerState();
-    if(!entity.player) {
-      return this.waitingHandler();
-    }
+
     if(currentState === -1 || currentState === 3){
+      entity.player.seekTo((millisecond + this.element.entity.startFrom)/1000);
+      entity.player.playVideo();
       return this.waitingHandler();
     }
-    entity.player.playVideo();
+    if(currentState !== 1) {
+      entity.player.seekTo((millisecond + this.element.entity.startFrom) / 1000);
+      entity.player.playVideo();
+    }
 
     return true;
   }
@@ -44,8 +47,10 @@ export default class VideoPlay extends MediaPlayback {
 
   onProgress(fraction, millisecond) {
     const startFrom = millisecond + this.element.entity.startFrom;
-    if(this.element.entity.loaded){
-      this.element.entity.player.seekTo((startFrom + millisecond) / 1000);
+    if(this.element.entity.player.getPlayerState() === -1 || this.element.entity.player.getPlayerState() === 5) {
+      this.element.entity.player.pauseVideo();
     }
+
+    this.element.entity.player.seekTo(startFrom / 1000);
   }
 }
