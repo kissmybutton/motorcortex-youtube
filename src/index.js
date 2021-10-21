@@ -35,6 +35,12 @@ export default {
       videoId: {
         type: "string"
       },
+      volume: {
+        type: "number",
+        min: 0,
+        max: 1,
+        default: 1,
+      }
     },
   },
   capabilities: {
