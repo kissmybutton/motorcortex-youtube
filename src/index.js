@@ -1,10 +1,10 @@
 import VideoClip from "./VideoClip";
 import VideoPlay from "./Incidents/VideoPlay";
-import { name, version } from "../package.json";
+import pkg from "../package.json";
 
 export default {
-  npm_name: name,
-  version: version,
+  npm_name: pkg.name,
+  version: pkg.version,
   incidents: [
     {
       exportable: VideoPlay,
@@ -33,14 +33,14 @@ export default {
         min: 0,
       },
       videoId: {
-        type: "string"
+        type: "string",
       },
       volume: {
         type: "number",
         min: 0,
         max: 1,
         default: 1,
-      }
+      },
     },
   },
   capabilities: {

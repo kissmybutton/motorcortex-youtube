@@ -1,44 +1,98 @@
-# motorcortex-plugin-starter
+# motorcortex-youtube
 
-## Purpose
+## Installation
 
-A starter plugin for creating MotorCortex plugins.
+```bash
+$ npm install --save @kissmybutton/motorcortex-youtube
+# OR
+$ yarn add @kissmybutton/motorcortex-youtube
+```
 
-## Structure and Contents
+## Importing
 
-It includes:
+```javascript
+import MotorCortex from "@kissmybutton/motorcortex";
+import MCVideo from "@kissmybutton/motorcortex-youtube";
+```
 
-- rollup configuration & ready to use build tools
-- a pre-configured webpack for the needs of the demo
-- pre-configured eslint and babel
-- and a set of ready to work on, Incidents:
-  - **Effect**, for developing a custom Effect
-  - **HTMLClip**, for developing a pre-configured HTML Clip with HTML, CSS and Incidents
-  - **Combo**, for developing custom, pre-configured Combos
-  - **Clip**, for developing custom browser Clips, such as canvas
+## Loading
 
-These Incidents are the starting point for developing a plugin. They extend the right
-Classes from MotorCortex SDK and they have blank implementations of all the methods that
-should or can be overwritten, with comments.
+```javascript
+const VideoPlugin = MotorCortex.loadPlugin(MCVideo);
+```
 
-Along with the comments you can always refer to <a href="https://docs.motorcortexjs.com/" target="_blank">MotorCortex documentation</a>
-for detailed information on how to implement a plugin.
+## API
 
-## How to use
+The Plugin exposes two Incidents in total:
 
-Once you've decided what exactly your pluign is going to do and once we've decided on the type of Incident(s)
-you need to implement, you can start directly from the basic/blank implementations and either work on them directly
-or just copy them.
-Change the names of the files, name your Classes however you want but always make sure you import and
-expose everything properly on your index.js file.
+- the video Clip
+- the Playback incident
 
-Also, it's imortant to change your package.json file so you can name your pluign, provide details and more.
+### Clip
 
-## Commands
+The Clip is used to create a new video clip and you can pass to it all of the core video information such as the video id from youtube and the size:
 
-- `npm run build`: builds the dist of your pluign along with the demo
-- `npm run build:demo`: builds just the demo
-- `npm start`: builds everything and starts the demo
-- `npm start:demo`: just starts the demo
+```javascript
+import MotorCortex from "@kissmybutton/motorcortex";
+import MCVideo from "@kissmybutton/motorcortex-youtube";
+const VideoPlugin = MotorCortex.loadPlugin(MCVideo);
 
-## Have fun!!!
+const VideoClip = new VideoPlugin.Clip(
+  {
+    startFrom: 5000,
+    width: 1280,
+    height: 720,
+    videoId: "RUpDslHSLbU",
+    volume: 0.3,
+  },
+  {
+    selector: "#video-container",
+    id: "videoClip",
+  }
+);
+```
+
+As shown on the example the supported attributes that the "Clip" Incident accepts are:
+
+- videoId: an string id from the viedeo that you would like to use from utube
+- width: (optional). The desired width of the video in pixels. You only need to define it by an integer
+- height (optional). The desired height of the video in pixels. You only need to define it by an integer
+- startFrom (optional / defaluts to 0). If passed the video will be loaded directly with start on the specified millisecond
+
+### Playback
+
+The Playback Incident is used to define the execution of the video. The only thing to set is the duration.
+
+```javascript
+import MotorCortex from "@kissmybutton/motorcortex";
+import MCVideo from "@kissmybutton/motorcortex-youtube";
+const VideoPlugin = MotorCortex.loadPlugin(MCVideo);
+
+const VideoClip = new VideoPlugin.Clip(
+  {
+    startFrom: 5000,
+    width: 1280,
+    height: 720,
+    videoId: "RUpDslHSLbU",
+    volume: 0.3,
+  },
+  {
+    selector: "#video-container",
+    id: "videoClip",
+  }
+);
+
+const Playback = new VideoPlugin.Playback({
+  selector: "!#video", // that's mandatory, it should always have the value "!#video" and it targets the video of the VideoPlugin.Clip
+  duration: 20000, // the duration of the playback in milliseconds
+});
+
+VideoClip.addIncident(Playback, 0);
+```
+
+Demo:[https://kissmybutton.github.io/motorcortex-video/demo/](https://kissmybutton.github.io/motorcortex-youtube/demo/)
+
+## License
+
+[MIT License](https://opensource.org/licenses/MIT)
+[![Kiss My Button](https://presskit.kissmybutton.gr/logos/kissmybutton-logo-small.png)](https://kissmybutton.gr)
