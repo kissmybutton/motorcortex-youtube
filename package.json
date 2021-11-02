@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-youtube",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Your plugin description here",
   "main": "dist/motorcortex-youtube.cjs.js",
   "module": "dist/motorcortex-youtube.esm.js",
