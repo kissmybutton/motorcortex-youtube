@@ -38,8 +38,7 @@ const Playback = new VideoPlugin.Playback({
   duration: 10000,
 });
 
-MyClip.addIncident(VideoClip, 500);
-VideoClip.addIncident(Playback, 500);
-
+MyClip.addIncident(VideoClip, 0);
+VideoClip.addIncident(Playback, 0);
 
 new Player({ clip: MyClip, showVolume: true });

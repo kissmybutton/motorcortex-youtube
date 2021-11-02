@@ -18,15 +18,14 @@ export default class VideoClip extends BrowserClip {
     `;
   }
 
-  subscribeVideoListener(funct){
-    if(!this.subscribers){
+  subscribeVideoListener(funct) {
+    if (!this.subscribers) {
       this.subscribers = [];
     }
     this.subscribers.push(funct);
   }
 
-  setVolume(vol){
-    // if(!this.customEntity.loaded) return;
+  setVolume(vol) {
     this.entity.player.setVolume(vol * 100 * (this.attrs.volume || 1));
   }
 
@@ -48,7 +47,7 @@ export default class VideoClip extends BrowserClip {
     this.context.rootElement.appendChild(tag);
 
     window.onYouTubeIframeAPIReady = () => {
-      player = new YT.Player(this.context.getElements("div")[0], {
+      player = new window.YT.Player(this.context.getElements("div")[0], {
         height: this.attrs.height,
         width: this.attrs.width,
         videoId: this.attrs.videoId,
@@ -76,9 +75,9 @@ export default class VideoClip extends BrowserClip {
             that.setVolume(res);
             that.contextLoaded();
           },
-          onStateChange: function(event){
-            if(that.subscribers) {
-              for(let i=0; i<that.subscribers.length; i++) {
+          onStateChange: function (event) {
+            if (that.subscribers) {
+              for (let i = 0; i < that.subscribers.length; i++) {
                 that.subscribers[i](event.data);
               }
             }
