@@ -704,7 +704,7 @@ var VideoPlay = /*#__PURE__*/function (_MediaPlayback) {
 }(motorcortex.MediaPlayback);
 
 var name = "@kissmybutton/motorcortex-youtube";
-var version = "0.0.1";
+var version = "1.0.0";
 var description = "Your plugin description here";
 var main = "dist/motorcortex-youtube.cjs.js";
 var module$1 = "dist/motorcortex-youtube.esm.js";
