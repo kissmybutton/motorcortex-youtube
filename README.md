@@ -21,6 +21,8 @@
 [Check it out here](https://kissmybutton.github.io/motorcortex-youtube/demo/)
 
 # Intro / Features
+Using MotorCortex-Youtube you can easily add a youtube video in your clip.
+
 The Plugin exposes two Incidents in total:
 
 - the video Clip
