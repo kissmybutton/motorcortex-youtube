@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/kissmybutton/motorcortex-youtube/compare/v1.0.0...v1.1.0) (2022-04-09)
+
+
+### Features
+
+* drop explorer 11 support ([4c1c33a](https://github.com/kissmybutton/motorcortex-youtube/commit/4c1c33ac1c8cf4ca41016621040428ebebdf329f))
+* update compatibility with motorcortex ([54cf133](https://github.com/kissmybutton/motorcortex-youtube/commit/54cf133db10670530d6cb68888c4e11c0dd6c8a7))
+
 ## 1.0.0 (2021-11-02)
 
 
