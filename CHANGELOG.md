@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/kissmybutton/motorcortex-youtube/compare/v1.1.0...v1.2.0) (2022-04-30)
+
+
+### Features
+
+* update mc to v9 ([ff26d68](https://github.com/kissmybutton/motorcortex-youtube/commit/ff26d686ce3cf33cabbc74273a2f2bbd2af4454d))
+
 ## [1.1.0](https://github.com/kissmybutton/motorcortex-youtube/compare/v1.0.0...v1.1.0) (2022-04-09)
 
 
