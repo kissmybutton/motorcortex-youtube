@@ -144,7 +144,7 @@ class VideoPlay extends motorcortex.MediaPlayback {
 }
 
 var name = "@kissmybutton/motorcortex-youtube";
-var version = "1.1.0";
+var version = "1.2.0";
 var description = "Your plugin description here";
 var main = "dist/motorcortex-youtube.cjs.js";
 var module$1 = "dist/motorcortex-youtube.esm.js";
