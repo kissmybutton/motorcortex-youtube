@@ -192,7 +192,7 @@ var devDependencies = {
 	"@donkeyclip/motorcortex": "9.1.5",
 	"@donkeyclip/motorcortex-player": "2.9.6",
 	"@rollup/plugin-babel": "5.3.1",
-	"@rollup/plugin-commonjs": "21.0.1",
+	"@rollup/plugin-commonjs": "21.1.0",
 	"@rollup/plugin-json": "4.1.0",
 	"@rollup/plugin-node-resolve": "13.0.6",
 	"@size-limit/preset-big-lib": "6.0.4",
