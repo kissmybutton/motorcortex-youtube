@@ -193,7 +193,7 @@ var devDependencies = {
 	"@babel/preset-env": "7.16.0",
 	"@donkeyclip/motorcortex": "9.1.4",
 	"@donkeyclip/motorcortex-player": "2.9.6",
-	"@rollup/plugin-babel": "5.3.0",
+	"@rollup/plugin-babel": "5.3.1",
 	"@rollup/plugin-commonjs": "21.0.1",
 	"@rollup/plugin-json": "4.1.0",
 	"@rollup/plugin-node-resolve": "13.0.6",
