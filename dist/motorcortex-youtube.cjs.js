@@ -185,12 +185,12 @@ var peerDependencies = {
 	"@donkeyclip/motorcortex": ">=7.5.5 < 10"
 };
 var devDependencies = {
-	"@babel/cli": "7.16.0",
-	"@babel/core": "7.16.0",
-	"@babel/eslint-parser": "7.16.0",
-	"@babel/plugin-syntax-jsx": "7.16.0",
-	"@babel/plugin-transform-react-jsx": "7.16.0",
-	"@babel/preset-env": "7.16.0",
+	"@babel/cli": "7.17.10",
+	"@babel/core": "7.17.10",
+	"@babel/eslint-parser": "7.17.0",
+	"@babel/plugin-syntax-jsx": "7.16.7",
+	"@babel/plugin-transform-react-jsx": "7.17.3",
+	"@babel/preset-env": "7.17.10",
 	"@donkeyclip/motorcortex": "9.1.4",
 	"@donkeyclip/motorcortex-player": "2.9.6",
 	"@rollup/plugin-babel": "5.3.1",
@@ -198,7 +198,7 @@ var devDependencies = {
 	"@rollup/plugin-json": "4.1.0",
 	"@rollup/plugin-node-resolve": "13.0.6",
 	"@size-limit/preset-big-lib": "6.0.4",
-	"babel-loader": "8.2.3",
+	"babel-loader": "8.2.5",
 	concurrently: "6.3.0",
 	"core-js": "3.19.0",
 	"css-loader": "6.5.0",
