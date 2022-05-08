@@ -209,7 +209,7 @@ var devDependencies = {
 	"eslint-plugin-import": "2.26.0",
 	"eslint-plugin-node": "11.1.0",
 	"eslint-plugin-prettier": "4.0.0",
-	"eslint-plugin-promise": "5.1.1",
+	"eslint-plugin-promise": "5.2.0",
 	husky: "7.0.4",
 	prettier: "2.4.1",
 	rimraf: "3.0.2",
