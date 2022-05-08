@@ -201,7 +201,7 @@ var devDependencies = {
 	"babel-loader": "8.2.5",
 	concurrently: "6.5.1",
 	"core-js": "3.22.4",
-	"css-loader": "6.5.0",
+	"css-loader": "6.7.1",
 	eslint: "7.32.0",
 	"eslint-config-prettier": "8.3.0",
 	"eslint-config-standard": "16.0.3",
