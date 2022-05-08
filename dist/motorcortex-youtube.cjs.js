@@ -216,7 +216,7 @@ var devDependencies = {
 	rollup: "2.72.1",
 	"rollup-plugin-terser": "7.0.2",
 	"size-limit": "6.0.4",
-	webpack: "5.61.0",
+	webpack: "5.72.0",
 	"webpack-cli": "4.9.2",
 	"webpack-dev-server": "4.4.0"
 };
