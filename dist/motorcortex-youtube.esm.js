@@ -211,7 +211,7 @@ var devDependencies = {
 	husky: "7.0.4",
 	prettier: "2.6.2",
 	rimraf: "3.0.2",
-	rollup: "2.72.1",
+	rollup: "2.73.0",
 	"rollup-plugin-terser": "7.0.2",
 	"size-limit": "6.0.4",
 	webpack: "5.72.1",
