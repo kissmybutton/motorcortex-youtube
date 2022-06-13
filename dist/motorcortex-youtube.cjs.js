@@ -217,7 +217,7 @@ var devDependencies = {
 	"rollup-plugin-terser": "7.0.2",
 	"size-limit": "6.0.4",
 	webpack: "5.73.0",
-	"webpack-cli": "4.9.2",
+	"webpack-cli": "4.10.0",
 	"webpack-dev-server": "4.9.2"
 };
 var pkg = {
