@@ -184,7 +184,7 @@ var peerDependencies = {
 };
 var devDependencies = {
 	"@babel/cli": "7.17.10",
-	"@babel/core": "7.18.2",
+	"@babel/core": "7.18.5",
 	"@babel/eslint-parser": "7.18.2",
 	"@babel/plugin-syntax-jsx": "7.17.12",
 	"@babel/plugin-transform-react-jsx": "7.17.12",
