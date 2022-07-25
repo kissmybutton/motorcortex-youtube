@@ -200,7 +200,7 @@ var devDependencies = {
 	"@size-limit/preset-big-lib": "6.0.4",
 	"babel-loader": "8.2.5",
 	concurrently: "6.5.1",
-	"core-js": "3.23.5",
+	"core-js": "3.24.0",
 	"css-loader": "6.7.1",
 	eslint: "7.32.0",
 	"eslint-config-prettier": "8.5.0",
