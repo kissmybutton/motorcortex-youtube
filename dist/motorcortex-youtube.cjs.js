@@ -7,11 +7,17 @@ class VideoClip extends motorcortex.BrowserClip {
     this.width = this.attrs.width || 640;
     this.height = this.attrs.height || 360;
     this.startFrom = this.attrs.startFrom || 0;
-    return "\n      <div></div>\n    ";
+    return `
+      <div></div>
+    `;
   }
 
   get css() {
-    return "\n      #video{\n        display:none;\n      }\n    ";
+    return `
+      #video{
+        display:none;
+      }
+    `;
   }
 
   subscribeVideoListener(funct) {
@@ -185,12 +191,12 @@ var peerDependencies = {
 	"@donkeyclip/motorcortex": ">=7.5.5 < 10"
 };
 var devDependencies = {
-	"@babel/cli": "7.18.10",
-	"@babel/core": "7.19.0",
-	"@babel/eslint-parser": "7.18.9",
+	"@babel/cli": "7.19.3",
+	"@babel/core": "7.19.3",
+	"@babel/eslint-parser": "7.19.1",
 	"@babel/plugin-syntax-jsx": "7.18.6",
 	"@babel/plugin-transform-react-jsx": "7.19.0",
-	"@babel/preset-env": "7.19.0",
+	"@babel/preset-env": "7.19.3",
 	"@donkeyclip/motorcortex": "9.4.1",
 	"@donkeyclip/motorcortex-player": "2.10.5",
 	"@rollup/plugin-babel": "5.3.1",
