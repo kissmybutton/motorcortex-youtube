@@ -41,4 +41,4 @@ const Playback = new VideoPlugin.Playback({
 MyClip.addIncident(VideoClip, 0);
 VideoClip.addIncident(Playback, 0);
 
-new Player({ clip: MyClip, showVolume: true });
+new Player({ clip: MyClip, showVolume: true, pointerEvents: false });
