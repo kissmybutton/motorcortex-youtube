@@ -11,7 +11,6 @@ class VideoClip extends motorcortex.BrowserClip {
       <div></div>
     `;
   }
-
   get css() {
     return `
       #video{
@@ -19,19 +18,15 @@ class VideoClip extends motorcortex.BrowserClip {
       }
     `;
   }
-
   subscribeVideoListener(funct) {
     if (!this.subscribers) {
       this.subscribers = [];
     }
-
     this.subscribers.push(funct);
   }
-
   setVolume(vol) {
     this.entity.player.setVolume(vol * 100 * (this.attrs.volume || 1));
   }
-
   onAfterRender() {
     this.contextLoading();
     const that = this;
@@ -47,7 +42,6 @@ class VideoClip extends motorcortex.BrowserClip {
     const tag = this.context.document.createElement("script");
     tag.src = "https://www.youtube.com/iframe_api";
     this.context.rootElement.appendChild(tag);
-
     window.onYouTubeIframeAPIReady = () => {
       player = new window.YT.Player(this.context.getElements("div")[0], {
         height: this.attrs.height,
@@ -85,68 +79,54 @@ class VideoClip extends motorcortex.BrowserClip {
       });
     };
   }
-
 }
 
 class VideoPlay extends motorcortex.MediaPlayback {
   onInitialise() {
     this.element.entity.subscribeVideoListener(this.stateChange.bind(this));
   }
-
   play(millisecond) {
     const entity = this.element.entity;
     const currentState = entity.player.getPlayerState();
-
     if (currentState === -1 || currentState === 3) {
       entity.player.seekTo((millisecond + this.element.entity.startFrom) / 1000);
       entity.player.playVideo();
       return this.waitingHandler();
     }
-
     if (currentState !== 1) {
       entity.player.seekTo((millisecond + this.element.entity.startFrom) / 1000);
       entity.player.playVideo();
     }
-
     return true;
   }
-
   stateChange(state) {
     switch (state) {
       case 3:
         this.waitingHandler();
         break;
-
       case 1:
         this.canplayHandler();
     }
   }
-
   waitingHandler() {
     this.setBlock("Video loading", {
       exceptional: true
     });
   }
-
   canplayHandler() {
     this.unblock();
   }
-
   stop() {
     const video = this.element.entity.player;
     video.pauseVideo();
   }
-
   onProgress(fraction, millisecond) {
     const startFrom = millisecond + this.element.entity.startFrom;
-
     if (this.element.entity.player.getPlayerState() === -1 || this.element.entity.player.getPlayerState() === 5) {
       this.element.entity.player.pauseVideo();
     }
-
     this.element.entity.player.seekTo(startFrom / 1000);
   }
-
 }
 
 var name = "@kissmybutton/motorcortex-youtube";
@@ -191,12 +171,12 @@ var peerDependencies = {
 	"@donkeyclip/motorcortex": ">=7.5.5 < 10"
 };
 var devDependencies = {
-	"@babel/cli": "7.19.3",
-	"@babel/core": "7.19.3",
-	"@babel/eslint-parser": "7.19.1",
-	"@babel/plugin-syntax-jsx": "7.18.6",
-	"@babel/plugin-transform-react-jsx": "7.19.0",
-	"@babel/preset-env": "7.19.4",
+	"@babel/cli": "7.21.5",
+	"@babel/core": "7.22.1",
+	"@babel/eslint-parser": "7.21.8",
+	"@babel/plugin-syntax-jsx": "7.21.4",
+	"@babel/plugin-transform-react-jsx": "7.22.3",
+	"@babel/preset-env": "7.22.4",
 	"@donkeyclip/motorcortex": "9.4.1",
 	"@donkeyclip/motorcortex-player": "2.10.8",
 	"@rollup/plugin-babel": "5.3.1",
