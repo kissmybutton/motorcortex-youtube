@@ -184,7 +184,7 @@ var devDependencies = {
 	"@size-limit/preset-big-lib": "6.0.4",
 	"babel-loader": "8.3.0",
 	concurrently: "6.5.1",
-	"core-js": "3.32.2",
+	"core-js": "3.33.1",
 	"css-loader": "6.8.1",
 	eslint: "7.32.0",
 	"eslint-config-prettier": "8.10.0",
