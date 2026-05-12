@@ -25,56 +25,68 @@ class VideoClip extends BrowserClip {
   setVolume(vol) {
     this.entity.player.setVolume(vol * 100 * (this.attrs.volume || 1));
   }
+  _createPlayer() {
+    const that = this;
+    const customEntity = this.entity;
+    const player = new window.YT.Player(this.context.getElements("div")[0], {
+      height: this.attrs.height,
+      width: this.attrs.width,
+      videoId: this.attrs.videoId,
+      playerVars: {
+        controls: 0,
+        playsinline: 0,
+        disablekb: 1,
+        enablejsapi: 1,
+        fs: 0,
+        iv_load_policy: 3,
+        modestbranding: 1,
+        rel: 0,
+        showinfo: 0,
+        ecver: 2,
+        start: this.startFrom / 1000
+      },
+      events: {
+        onReady: () => {
+          customEntity.loaded = true;
+          customEntity.player = player;
+          const res = that.DescriptiveIncident.volumeChangeSubscribe(that.id, that.setVolume.bind(that));
+          that.setVolume(res);
+          that.contextLoaded();
+        },
+        onStateChange: function (event) {
+          if (that.subscribers) {
+            for (let i = 0; i < that.subscribers.length; i++) {
+              that.subscribers[i](event.data);
+            }
+          }
+        }
+      }
+    });
+  }
   onAfterRender() {
     this.contextLoading();
     const that = this;
-    let player;
     const customEntity = {
-      player,
+      player: null,
       startFrom: this.startFrom,
       loaded: false,
       subscribeVideoListener: event => that.subscribeVideoListener(event)
     };
     this.entity = customEntity;
     this.setCustomEntity("video", customEntity);
+
+    // If YouTube IFrame API is already loaded, create player directly
+    if (window.YT && window.YT.Player) {
+      this._createPlayer();
+      return;
+    }
+
+    // First time: load the API script and wait for the callback
     const tag = this.context.document.createElement("script");
     tag.src = "https://www.youtube.com/iframe_api";
     this.context.rootElement.appendChild(tag);
     window.onYouTubeIframeAPIReady = () => {
-      player = new window.YT.Player(this.context.getElements("div")[0], {
-        height: this.attrs.height,
-        width: this.attrs.width,
-        videoId: this.attrs.videoId,
-        playerVars: {
-          controls: 0,
-          playsinline: 0,
-          disablekb: 1,
-          enablejsapi: 1,
-          fs: 0,
-          iv_load_policy: 3,
-          modestbranding: 1,
-          rel: 0,
-          showinfo: 0,
-          ecver: 2,
-          start: this.startFrom / 1000
-        },
-        events: {
-          onReady: () => {
-            customEntity.loaded = true;
-            customEntity.player = player;
-            const res = that.DescriptiveIncident.volumeChangeSubscribe(that.id, that.setVolume.bind(that));
-            that.setVolume(res);
-            that.contextLoaded();
-          },
-          onStateChange: function (event) {
-            if (that.subscribers) {
-              for (let i = 0; i < that.subscribers.length; i++) {
-                that.subscribers[i](event.data);
-              }
-            }
-          }
-        }
-      });
+      that._createPlayer();
     };
   }
 }
@@ -128,7 +140,7 @@ class VideoPlay extends MediaPlayback {
 }
 
 var name = "@kissmybutton/motorcortex-youtube";
-var version = "1.2.0";
+var version = "1.3.0";
 var description = "Your plugin description here";
 var main = "dist/motorcortex-youtube.cjs.js";
 var module = "dist/motorcortex-youtube.esm.js";
