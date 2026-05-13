@@ -49,6 +49,15 @@ MyClip.addIncident(
   0,
 );
 
+// Duck volume of video 1 from 0.3 → 0 over 5 seconds
+VideoClip1.addIncident(
+  new VideoPlugin.Volume(
+    { animatedAttrs: { volume: 0 }, initialValues: { volume: 0.3 } },
+    { selector: "!#video", duration: 5000 },
+  ),
+  3000,
+);
+
 // Fade out video 1
 MyClip.addIncident(
   new CSSEffect(
