@@ -182,7 +182,7 @@ class Volume extends Effect {
 }
 
 var name = "@kissmybutton/motorcortex-youtube";
-var version = "1.3.0";
+var version = "1.4.0";
 var description = "Your plugin description here";
 var main = "dist/motorcortex-youtube.cjs.js";
 var module = "dist/motorcortex-youtube.esm.js";
