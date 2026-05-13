@@ -1,5 +1,6 @@
 import VideoClip from "./VideoClip";
 import VideoPlay from "./Incidents/VideoPlay";
+import Volume from "./Incidents/Volume";
 import pkg from "../package.json";
 
 export default {
@@ -9,6 +10,10 @@ export default {
     {
       exportable: VideoPlay,
       name: "Playback",
+    },
+    {
+      exportable: Volume,
+      name: "Volume",
     },
   ],
   Clip: {

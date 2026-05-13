@@ -1,109 +1,121 @@
 # MotorCortex-Youtube
 
-**Table of Contents**
-
-- [MotorCortex-Youtube](#motorcortex-youtube)
-  - [Demo](#demo)
-- [Intro / Features](#intro--features)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Importing and Loading](#importing-and-loading)
-- [Creating Incidents](#creating-incidents)
-  - [Clip](#clip)
-  - [Playback](#playback)
-- [Adding Incidents in your clip](#adding-incidents-in-your-clip)
-- [Contributing](#contributing)
-- [License](#license)
-- [Sponsored by](#sponsored-by)
-
-## Demo
-
-[Check it out here](https://kissmybutton.github.io/motorcortex-youtube/demo/)
-
-# Intro / Features
-Using MotorCortex-Youtube you can easily add a youtube video in your clip.
-
-The Plugin exposes two Incidents in total:
-
-- the video Clip
-- the Playback incident
-# Getting Started
+YouTube video playback plugin for MotorCortex with timeline control (play, pause, seek) and volume animation.
 
 ## Installation
 
 ```bash
-$ npm install --save @kissmybutton/motorcortex-youtube
-# OR
-$ yarn add @kissmybutton/motorcortex-youtube
+npm install @kissmybutton/motorcortex-youtube
 ```
 
-## Importing and loading
+Peer dependency: `@donkeyclip/motorcortex >= 9.24.0`
+
+## Quick start
 
 ```javascript
-import { loadPlugin } from "@kissmybutton/motorcortex";
+import { HTMLClip, loadPlugin } from "@donkeyclip/motorcortex";
+import Player from "@donkeyclip/motorcortex-player";
 import MCVideo from "@kissmybutton/motorcortex-youtube";
 const VideoPlugin = loadPlugin(MCVideo);
-```
-# Creating Incidents
-## Clip
 
-The Clip is used to create a new video clip and you can pass to it all of the core video information such as the video id from youtube and the size:
+const clip = new HTMLClip({
+  host: document.getElementById("clip"),
+  html: '<div id="video-container"></div>',
+  css: '#video-container { width: 1280px; height: 720px; }',
+  containerParams: { width: "1280px", height: "720px" },
+});
 
-```javascript
-const VideoClip = new VideoPlugin.Clip(
+const videoClip = new VideoPlugin.Clip(
   {
-    startFrom: 5000,
+    videoId: "RUpDslHSLbU",
+    startFrom: 5000,    // start 5s into the video
     width: 1280,
     height: 720,
-    videoId: "RUpDslHSLbU",
-    volume: 0.3,
+    volume: 0.3,        // 0-1
   },
   {
     selector: "#video-container",
-    id: "videoClip",
   }
 );
+
+// Play 10 seconds of the video
+videoClip.addIncident(
+  new VideoPlugin.Playback({
+    selector: "!#video",
+    duration: 10000,
+  }),
+  0,
+);
+
+clip.addIncident(videoClip, 0);
+new Player({ clip, showVolume: true });
 ```
-### Clip Attrs
-As shown on the example the supported attributes that the "Clip" Incident accepts are:
 
-- videoId: an string id from the viedeo that you would like to use from utube
-- width: (optional). The desired width of the video in pixels. You only need to define it by an integer
-- height (optional). The desired height of the video in pixels. You only need to define it by an integer
-- startFrom (optional / defaluts to 0). If passed the video will be loaded directly with start on the specified millisecond
+## Clip attrs
 
-## Playback
+| Attr        | Type   | Default | Description                                      |
+| ----------- | ------ | ------- | ------------------------------------------------ |
+| `videoId`   | string | --      | YouTube video ID (required)                       |
+| `width`     | number | 640     | Player width in pixels                            |
+| `height`    | number | 360     | Player height in pixels                           |
+| `startFrom` | number | 0       | Start offset in milliseconds                      |
+| `volume`    | number | 1       | Initial volume (0-1)                              |
 
-The Playback Incident is used to define the execution of the video. The only thing to set is the duration.
+## Incidents
+
+### Playback
+
+Controls video playback. Selector must always be `!#video`.
 
 ```javascript
-const Playback = new VideoPlugin.Playback({
-  selector: "!#video", // that's mandatory, it should always have the value "!#video" and it targets the video of the VideoPlugin.Clip
-  duration: 20000, // the duration of the playback in milliseconds
+new VideoPlugin.Playback({
+  selector: "!#video",
+  duration: 15000,  // play for 15 seconds
 });
 ```
 
-#### IMPORTANT 
-All `Playback Incidents` should have as a `selector` : `!#video`
+### Volume
 
-# Adding Incidents in your clip
+Animates the YouTube player's volume over time. **Both `animatedAttrs` and `initialValues` must be provided.**
 
 ```javascript
-clipName.addIncident(incidentName,startTime);
+// Fade volume from 0.8 to 0 over 3 seconds
+videoClip.addIncident(
+  new VideoPlugin.Volume(
+    {
+      animatedAttrs: { volume: 0 },
+      initialValues: { volume: 0.8 },
+    },
+    { selector: "!#video", duration: 3000 },
+  ),
+  7000,
+);
 ```
 
-# Contributing 
+| Param          | Description                                |
+| -------------- | ------------------------------------------ |
+| `animatedAttrs.volume` | Target volume (0-1)                |
+| `initialValues.volume` | Starting volume (0-1) — **required** |
 
-In general, we follow the "fork-and-pull" Git workflow, so if you want to submit patches and additions you should follow the next steps:
-1.	**Fork** the repo on GitHub
-2.	**Clone** the project to your own machine
-3.	**Commit** changes to your own branch
-4.	**Push** your work back up to your fork
-5.	Submit a **Pull request** so that we can review your changes
+Use cases:
+- Duck video volume when narration plays on top
+- Fade out volume before video ends
+- Fade in volume at the start
 
-# License
+## Multiple videos
+
+Multiple `VideoPlugin.Clip` instances are supported in the same session. The YouTube IFrame API is loaded once and reused for subsequent players.
+
+## Notes
+
+- The YouTube IFrame API requires an internet connection
+- Videos must be embeddable (not restricted by the uploader)
+- `startFrom` is in milliseconds, not seconds
+
+## License
 
 [MIT License](https://opensource.org/licenses/MIT)
 
-# Sponsored by
-[![Kiss My Button](https://presskit.kissmybutton.gr/logos/kissmybutton-logo-small.png)](https://kissmybutton.gr)
+## Sponsored by
+
+[<img src="https://presskit.donkeyclip.com/logos/donkey%20clip%20logo.svg" width=250></img>](https://donkeyclip.com)

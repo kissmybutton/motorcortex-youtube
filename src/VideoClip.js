@@ -42,6 +42,7 @@ export default class VideoClip extends BrowserClip {
       player,
       startFrom: this.startFrom,
       loaded: false,
+      initialVolume: this.attrs.volume ?? 1,
       subscribeVideoListener: (event) => that.subscribeVideoListener(event),
     };
     this.entity = customEntity;
