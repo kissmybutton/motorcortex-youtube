@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/kissmybutton/motorcortex-youtube/compare/v1.2.0...v1.3.0) (2026-07-13)
+
+
+### Features
+
+* video metadata overlay + MetaReveal Effect ([54de883](https://github.com/kissmybutton/motorcortex-youtube/commit/54de8834f013d75bd090f6b88753a8a88226d497))
+* Volume effect for animated volume control ([5bf0c0f](https://github.com/kissmybutton/motorcortex-youtube/commit/5bf0c0f28729da9498934ab70602489d04078599))
+
+
+### Bug Fixes
+
+* support multiple YouTube players — check if API already loaded ([2f0b8ed](https://github.com/kissmybutton/motorcortex-youtube/commit/2f0b8ed506950c282f18ef6b5b0742826b2e1e0f))
+* support multiple YouTube players per session ([58a0012](https://github.com/kissmybutton/motorcortex-youtube/commit/58a00126399dcbe3bfb131e1755167d0e22c4560))
+
 ## [1.2.0](https://github.com/kissmybutton/motorcortex-youtube/compare/v1.1.0...v1.2.0) (2022-04-30)
 
 
