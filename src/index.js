@@ -1,6 +1,7 @@
 import VideoClip from "./VideoClip";
 import VideoPlay from "./Incidents/VideoPlay";
 import Volume from "./Incidents/Volume";
+import MetaReveal from "./Incidents/MetaReveal";
 import pkg from "../package.json";
 
 export default {
@@ -14,6 +15,10 @@ export default {
     {
       exportable: Volume,
       name: "Volume",
+    },
+    {
+      exportable: MetaReveal,
+      name: "MetaReveal",
     },
   ],
   Clip: {
@@ -45,6 +50,26 @@ export default {
         min: 0,
         max: 1,
         default: 1,
+      },
+      title: {
+        optional: true,
+        type: "string",
+      },
+      channel: {
+        optional: true,
+        type: "string",
+      },
+      publishedAt: {
+        optional: true,
+        type: "string",
+      },
+      viewCount: {
+        optional: true,
+        type: "number",
+      },
+      likeCount: {
+        optional: true,
+        type: "number",
       },
     },
   },

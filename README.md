@@ -1,6 +1,6 @@
 # MotorCortex-Youtube
 
-YouTube video playback plugin for MotorCortex with timeline control (play, pause, seek) and volume animation.
+YouTube video playback plugin for MotorCortex with timeline control (play, pause, seek), volume animation, and optional video metadata overlay.
 
 ## Installation
 
@@ -53,13 +53,20 @@ new Player({ clip, showVolume: true });
 
 ## Clip attrs
 
-| Attr        | Type   | Default | Description                                      |
-| ----------- | ------ | ------- | ------------------------------------------------ |
-| `videoId`   | string | --      | YouTube video ID (required)                       |
-| `width`     | number | 640     | Player width in pixels                            |
-| `height`    | number | 360     | Player height in pixels                           |
-| `startFrom` | number | 0       | Start offset in milliseconds                      |
-| `volume`    | number | 1       | Initial volume (0-1)                              |
+| Attr          | Type   | Default | Description                                      |
+| ------------- | ------ | ------- | ------------------------------------------------ |
+| `videoId`     | string | --      | YouTube video ID (required)                       |
+| `width`       | number | 640     | Player width in pixels                            |
+| `height`      | number | 360     | Player height in pixels                           |
+| `startFrom`   | number | 0       | Start offset in milliseconds                      |
+| `volume`      | number | 1       | Initial volume (0-1)                              |
+| `title`       | string | --      | Video title (enables metadata overlay)            |
+| `channel`     | string | --      | Channel name (optional)                           |
+| `publishedAt` | string | --      | Publish date string (optional)                    |
+| `viewCount`   | number | --      | View count (optional, auto-formatted: 1.2M, 500K) |
+| `likeCount`   | number | --      | Like count (optional, auto-formatted)             |
+
+When `title` is provided, a metadata overlay card is rendered on the video. Use the `MetaReveal` incident to animate it in and out.
 
 ## Incidents
 
@@ -92,15 +99,55 @@ videoClip.addIncident(
 );
 ```
 
-| Param          | Description                                |
-| -------------- | ------------------------------------------ |
+| Param                  | Description                        |
+| ---------------------- | ---------------------------------- |
 | `animatedAttrs.volume` | Target volume (0-1)                |
 | `initialValues.volume` | Starting volume (0-1) — **required** |
 
-Use cases:
-- Duck video volume when narration plays on top
-- Fade out volume before video ends
-- Fade in volume at the start
+### MetaReveal
+
+Animates the metadata overlay's opacity and the card's vertical slide. Requires `title` in clip attrs. Selector must be `!#meta`.
+
+```javascript
+// Fade in at 1s: slide down from above, opacity 0→1
+videoClip.addIncident(
+  new VideoPlugin.MetaReveal(
+    { animatedAttrs: { opacity: 1 }, initialValues: { opacity: 0 } },
+    {
+      selector: "!#meta",
+      duration: 400,
+      easing: "easeOutCubic",
+      cardSlideFrom: "-12",
+      cardSlideY: "0",
+    },
+  ),
+  1000,
+);
+
+// Fade out at 6.4s: slide back up, opacity 1→0
+videoClip.addIncident(
+  new VideoPlugin.MetaReveal(
+    { animatedAttrs: { opacity: 0 }, initialValues: { opacity: 1 } },
+    {
+      selector: "!#meta",
+      duration: 600,
+      easing: "easeInCubic",
+      cardSlideFrom: "0",
+      cardSlideY: "-12",
+    },
+  ),
+  6400,
+);
+```
+
+| Param                   | Description                                 |
+| ----------------------- | ------------------------------------------- |
+| `animatedAttrs.opacity` | Target opacity (0-1)                        |
+| `initialValues.opacity` | Starting opacity (0-1) — **required**       |
+| `cardSlideFrom`         | Starting translateY in px (e.g. `"-12"`)    |
+| `cardSlideY`            | Target translateY in px (e.g. `"0"`)        |
+
+The overlay displays a frosted-glass card with the video title, channel (with icon), publish date, view count, and like count. Fields other than `title` are optional — only provided fields are shown.
 
 ## Multiple videos
 
